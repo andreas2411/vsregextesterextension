@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regular Expression Tester Extension", "Regular Expression Tester Extension\Regular Expression Tester Extension.csproj", "{020D2E78-45A9-47FF-8844-DB03962BB711}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{020D2E78-45A9-47FF-8844-DB03962BB711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020D2E78-45A9-47FF-8844-DB03962BB711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020D2E78-45A9-47FF-8844-DB03962BB711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020D2E78-45A9-47FF-8844-DB03962BB711}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

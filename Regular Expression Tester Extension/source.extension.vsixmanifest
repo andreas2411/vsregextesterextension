@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="a65d58d2-ead8-4eea-a47d-fa60865a6043">
+    <Name>Regular Expression Tester Extension</Name>
+    <Author>Andreas Andersen</Author>
+    <Version>1.7</Version>
+    <Description xml:space="preserve">Parses regular expressions from your code, so you can modify and test them and insert the updated versions. Matches and groups are highlighted for an easy overview of exactly what captures your regular expression generates. Also allows you to save your regular expressions for later use.</Description>
+    <Locale>1033</Locale>
+    <MoreInfoUrl>http://visualstudiogallery.msdn.microsoft.com/bf883ae3-188b-43bc-bd29-6235c4195d1f</MoreInfoUrl>
+    <License>Terms.txt</License>
+    <Icon>LargeRegExIcon.ico</Icon>
+    <PreviewImage>RegExLogo.bmp</PreviewImage>
+    <InstalledByMsi>false</InstalledByMsi>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+      <VisualStudio Version="11.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+        <Edition>IntegratedShell</Edition>
+        <Edition>VST_All</Edition>
+      </VisualStudio>
+      <VisualStudio Version="12.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+        <Edition>IntegratedShell</Edition>
+      </VisualStudio>
+      <VisualStudio Version="14.0">
+        <Edition>Community</Edition>
+        <Edition>Pro</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Ultimate</Edition>
+        <Edition>Enterprise</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.6.1" />
+  </Identifier>
+  <References>
+    <Reference Id="Microsoft.VisualStudio.MPF" MinVersion="10.0">
+      <Name>Visual Studio MPF</Name>
+    </Reference>
+  </References>
+  <Content>
+    <VsPackage>Regular Expression Tester Extension.pkgdef</VsPackage>
+  </Content>
+</Vsix>
