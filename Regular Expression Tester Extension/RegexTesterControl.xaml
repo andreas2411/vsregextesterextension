@@ -17,14 +17,14 @@
                     <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid Grid.Row="0">
                     <GroupBox Header="Regular expression" Margin="0,3,0,3">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -62,9 +62,9 @@
                     </StackPanel>
                 </Grid>
 
-                <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid Grid.Row="1">
                     <GroupBox Header="Text to match" Margin="0,3,0,3">
-                        <TextBox Name="textBoxItemToMatch" MinHeight="80" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AcceptsReturn="True" AcceptsTab="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"></TextBox>
+                        <TextBox Name="textBoxItemToMatch" MinHeight="36" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AcceptsReturn="True" AcceptsTab="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"></TextBox>
                     </GroupBox>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0">
                         <Button Margin="2" Name="buttonSaveTest" Width="50" Click="buttonSaveTest_Click" IsEnabled="False">Save</Button>
@@ -73,31 +73,31 @@
                     </StackPanel>
                 </Grid>
 
-                <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid Grid.Row="2">
                     <GroupBox Header="Replace pattern" Margin="0,3,0,3">
                         <TextBox Name="textBoxReplacePattern" Height="25" Margin="5" AcceptsReturn="False" AcceptsTab="True"></TextBox>
                     </GroupBox>
                 </Grid>
 
-                <Grid Grid.Row="3" Grid.Column="0">
+                <Grid Grid.Row="3">
                     <GroupBox Header="Matches" Margin="0,3,0,3">
-                        <WindowsFormsHost Margin="5" Name="richTextBoxMatchesHost" MinHeight="80" />
+                        <WindowsFormsHost Margin="5" Name="richTextBoxMatchesHost" MinHeight="36" />
                     </GroupBox>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0">
                         <Button Margin="2" Width="40" Name="viewMatchesButton" Click="viewMatchesButton_Click">View</Button>
                     </StackPanel>
                 </Grid>
 
-                <Grid Grid.Row="3" Grid.Column="1">
+                <Grid Grid.Row="4">
                     <GroupBox Header="Replace result" Margin="0,3,0,3">
-                        <TextBox Margin="5" MinHeight="80" Name="textBoxReplaceResult" IsReadOnly="True" BorderThickness="0" Background="{Binding ElementName=tabControlRegex, Path=Background}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBox Margin="5" MinHeight="36" Name="textBoxReplaceResult" IsReadOnly="True" BorderThickness="0" Background="{Binding ElementName=tabControlRegex, Path=Background}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
                     </GroupBox>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0">
                         <Button Margin="2" Width="40" Name="viewReplaceResultButton" Click="viewReplaceResultButton_Click">View</Button>
                     </StackPanel>
                 </Grid>
 
-                <WrapPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="2">
+                <WrapPanel Grid.Row="5" Orientation="Horizontal">
                     <Button Margin="3,0,5,0" Name="buttonResetEvaluation" Height="23" Width="50" Click="buttonResetEvaluation_Click">Reset</Button>
                     <CheckBox Content="Evaluate automatically" Height="16" Name="checkboxEvaluateAutomatically" IsChecked="True" Click="checkboxEvaluateAutomatically_Click" />
                     <Button Content="Evaluate" Height="23" Name="buttonEvaluate" Width="50" Visibility="Hidden" Click="buttonEvaluate_Click" Margin="5,0,0,0" />
