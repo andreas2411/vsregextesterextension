@@ -1,28 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using EnvDTE;
+using Microsoft.VisualStudio.Shell;
+using RegexTester;
+using RegexTester.Parsing.CSharp;
+using RegexTester.Parsing.VB;
 using RegexTester.UserControls;
 using Forms = System.Windows.Forms;
-using RegexTester;
-using System.Threading;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
-using System.Web.UI.Design;
-using EnvDTE;
-using RegexTester.Parsing.VB;
-using RegexTester.Parsing.CSharp;
-using Microsoft.VisualStudio.Shell;
-using RegexTester.Parsing;
 
 namespace AndreasAndersen.Regular_Expression_Tester_Extension
 {
