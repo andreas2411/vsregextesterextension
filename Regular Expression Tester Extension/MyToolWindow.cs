@@ -1,6 +1,13 @@
 ﻿using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Windows;
 using System.Runtime.InteropServices;
+using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Shell;
+using EnvDTE80;
 
 namespace AndreasAndersen.Regular_Expression_Tester_Extension
 {

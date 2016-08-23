@@ -7,6 +7,3 @@
 
 # Nuget packages
 /**/packages/**/*
-
-# VS files
-*.csproj.user
