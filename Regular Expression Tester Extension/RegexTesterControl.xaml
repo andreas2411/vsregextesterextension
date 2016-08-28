@@ -11,108 +11,98 @@
              Name="MyToolWindow" Margin="0,0,0,0">
     <TabControl Margin="0,0,0,0" Name="tabControlRegex" >
         <TabItem Header="Test Regular Expressions" Name="tabItemTestRegularExpressions">
-            <Grid ShowGridLines="False">
+            <Grid ShowGridLines="False" Margin="2">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="3*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
-                    <RowDefinition Height="35"></RowDefinition>
-                    <RowDefinition Height="35"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
-                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Margin="5">Regular expression:</Label>
-                <Border Name="syntaxHighlighterBorder" Grid.Row="0" Grid.Column="1" BorderBrush="Green" BorderThickness="3" Margin="5">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="25" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <WindowsFormsHost Name="syntaxHighlighterHost" Grid.Row="0" />
-                        <TextBlock Name="messageLabel" Grid.Row="1" />
-                    </Grid>
-                </Border>
-                <Label Grid.Row="1" Grid.Column="0" Margin="5">Text to match:</Label>
-                <Grid Grid.Row="1" Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="25" />
-                    </Grid.ColumnDefinitions>
-                    <TextBox Name="textBoxItemToMatch" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AcceptsReturn="True" AcceptsTab="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"></TextBox>
-                    <Button Name="editItemToMatchButton" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,5,5,5" Click="editItemToMatchButton_Click">
-                        <TextBlock HorizontalAlignment="Center" FontFamily="Courier New" FontSize="10">E<LineBreak/>d
-                        <LineBreak/>i
-                        <LineBreak/>t</TextBlock>
-                    </Button>
-                </Grid>
-                <Label Margin="5" Grid.Row="2" Grid.Column="0">Replace pattern:</Label>
-                <TextBox Margin="5" Name="textBoxReplacePattern" Grid.Row="2" Grid.Column="1" Height="23"  AcceptsReturn="False" AcceptsTab="True"></TextBox>
-                <StackPanel Margin="5" Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2">
-                    <CheckBox Name="checkBoxIgnoreCase" Margin="0,0,5,0">Ignore case</CheckBox>
-                    <CheckBox Name="checkBoxMultiline" Margin="0,0,5,0">Multiline</CheckBox>
-                    <CheckBox Name="checkBoxExplicitCapture" Margin="0,0,5,0">Explicit capture</CheckBox>
-                    <CheckBox Name="checkBoxCompiled" Margin="0,0,5,0">Compiled</CheckBox>
-                    <CheckBox Name="checkBoxSingleline" Margin="0,0,5,0">Singleline</CheckBox>
-                    <CheckBox Name="checkBoxIgnorePatternWhitespace" Margin="0,0,5,0">Ignore pattern whitespace</CheckBox>
-                    <CheckBox Name="checkBoxRightToLeft" Margin="0,0,5,0">Right to left</CheckBox>
-                    <CheckBox Name="checkBoxECMAScript" Margin="0,0,5,0">ECMA script</CheckBox>
-                    <CheckBox Name="checkBoxCultureInvariant">Culture invariant</CheckBox>
-                </StackPanel>
-                <Label Margin="5" Grid.Row="4" Grid.Column="0">Matches:</Label>
-                <Grid Grid.Row="4" Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="25" />
-                    </Grid.ColumnDefinitions>
-                    <WindowsFormsHost Margin="5" Name="richTextBoxMatchesHost" Grid.Row="4" Grid.Column="0" />
-                    <Button Name="viewMatchesButton" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,5,5,5" Click="viewMatchesButton_Click">
-                        <TextBlock HorizontalAlignment="Center" FontFamily="Courier New" FontSize="10">V<LineBreak/>i
-                        <LineBreak/>e
-                        <LineBreak/>w</TextBlock>
-                    </Button>
-                </Grid>
-                <Label Margin="5" Grid.Row="5" Grid.Column="0">Replace result:</Label>
-                <Grid Grid.Row="5" Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="25" />
-                    </Grid.ColumnDefinitions>
 
-                    <TextBox Margin="5" Name="textBoxReplaceResult" IsReadOnly="True" BorderThickness="0" Background="{Binding ElementName=tabControlRegex, Path=Background}" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" />
-                    <Button Name="viewReplaceResultButton" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,5,5,5" Click="viewReplaceResultButton_Click">
-                        <TextBlock HorizontalAlignment="Center" FontFamily="Courier New" FontSize="10">V<LineBreak/>i
-                        <LineBreak/>e
-                        <LineBreak/>w</TextBlock>
-                    </Button>
+                <Grid Grid.Row="0">
+                    <GroupBox Header="Regular expression" Margin="0,3,0,3">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" Name="syntaxHighlighterBorder" Margin="5" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="25" />
+                                    </Grid.RowDefinitions>
+                                    <WindowsFormsHost Name="syntaxHighlighterHost" Grid.Row="0" />
+                                    <TextBlock Name="messageLabel" Grid.Row="1" />
+                                </Grid>
+                            </Border>
+                            <WrapPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+                                <CheckBox Name="checkBoxIgnoreCase" Margin="0,0,5,0">Ignore case</CheckBox>
+                                <CheckBox Name="checkBoxMultiline" Margin="0,0,5,0">Multiline</CheckBox>
+                                <CheckBox Name="checkBoxExplicitCapture" Margin="0,0,5,0">Explicit capture</CheckBox>
+                                <CheckBox Name="checkBoxCompiled" Margin="0,0,5,0">Compiled</CheckBox>
+                                <CheckBox Name="checkBoxSingleline" Margin="0,0,5,0">Singleline</CheckBox>
+                                <CheckBox Name="checkBoxIgnorePatternWhitespace" Margin="0,0,5,0">Ignore pattern whitespace</CheckBox>
+                                <CheckBox Name="checkBoxRightToLeft" Margin="0,0,5,0">Right to left</CheckBox>
+                                <CheckBox Name="checkBoxECMAScript" Margin="0,0,5,0">ECMA script</CheckBox>
+                                <CheckBox Name="checkBoxCultureInvariant">Culture invariant</CheckBox>
+                            </WrapPanel>
+                        </Grid>
+                    </GroupBox>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <Button Margin="2" Name="buttonInsert" Width="50" Click="buttonInsert_Click" IsDefault="True">Insert</Button>
+                        <Button Margin="2" Name="buttonNew" Width="50" Click="buttonNew_Click">New</Button>
+                        <Button Margin="2" Name="buttonSave" Width="50" Click="buttonSave_Click">Save</Button>
+                        <Button Margin="2" Name="buttonSaveAs" Width="50" Click="buttonSaveAs_Click">Save As</Button>
+                    </StackPanel>
                 </Grid>
-                <StackPanel Margin="5" Orientation="Horizontal" Grid.Row="6" Grid.ColumnSpan="2">
-                    <Button Margin="0,0,5,0" Name="buttonInsert" Height="23" Width="50" Click="buttonInsert_Click" IsDefault="True">Insert</Button>
-                    <Button Margin="0,0,5,0" Name="buttonNew" Height="23" Width="50" Click="buttonNew_Click">New</Button>
-                    <Button Margin="0,0,5,0" Name="buttonSave" Height="23" Width="50" Click="buttonSave_Click">Save</Button>
-                    <Button Content="Save As" Height="23" Name="buttonSaveAs" Width="50" Margin="0,0,5,0" Click="buttonSaveAs_Click" />
-                    <Button Content="Save Test" Height="23" Name="buttonSaveTest" Width="60" Margin="0,0,5,0" Click="buttonSaveTest_Click" IsEnabled="False" />
-                    <Button Content="Save Test As" Height="23" Name="buttonSaveTestAs" Width="75" Margin="0,0,5,0" Click="buttonSaveTestAs_Click" IsEnabled="False" />
-                    <Button Margin="0,0,5,0" Name="buttonResetEvaluation" Height="23" Width="50" Click="buttonResetEvaluation_Click">Reset</Button>
+
+                <Grid Grid.Row="1">
+                    <GroupBox Header="Text to match" Margin="0,3,0,3">
+                        <TextBox Name="textBoxItemToMatch" MinHeight="36" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" AcceptsReturn="True" AcceptsTab="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"></TextBox>
+                    </GroupBox>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <Button Margin="2" Name="buttonSaveTest" Width="50" Click="buttonSaveTest_Click" IsEnabled="False">Save</Button>
+                        <Button Margin="2" Name="buttonSaveTestAs" Width="50" Click="buttonSaveTestAs_Click" IsEnabled="False">Save As</Button>
+                        <Button Margin="2" Name="editItemToMatchButton" Width="50" Click="editItemToMatchButton_Click">Edit</Button>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <GroupBox Header="Replace pattern" Margin="0,3,0,3">
+                        <TextBox Name="textBoxReplacePattern" Height="25" Margin="5" AcceptsReturn="False" AcceptsTab="True"></TextBox>
+                    </GroupBox>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <GroupBox Header="Matches" Margin="0,3,0,3">
+                        <WindowsFormsHost Margin="5" Name="richTextBoxMatchesHost" MinHeight="36" />
+                    </GroupBox>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <Button Margin="2" Width="40" Name="viewMatchesButton" Click="viewMatchesButton_Click">View</Button>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <GroupBox Header="Replace result" Margin="0,3,0,3">
+                        <TextBox Margin="5" MinHeight="36" Name="textBoxReplaceResult" IsReadOnly="True" BorderThickness="0" Background="{Binding ElementName=tabControlRegex, Path=Background}" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                    </GroupBox>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <Button Margin="2" Width="40" Name="viewReplaceResultButton" Click="viewReplaceResultButton_Click">View</Button>
+                    </StackPanel>
+                </Grid>
+
+                <WrapPanel Grid.Row="5" Orientation="Horizontal">
+                    <Button Margin="3,0,5,0" Name="buttonResetEvaluation" Height="23" Width="50" Click="buttonResetEvaluation_Click">Reset</Button>
                     <CheckBox Content="Evaluate automatically" Height="16" Name="checkboxEvaluateAutomatically" IsChecked="True" Click="checkboxEvaluateAutomatically_Click" />
                     <Button Content="Evaluate" Height="23" Name="buttonEvaluate" Width="50" Visibility="Hidden" Click="buttonEvaluate_Click" Margin="5,0,0,0" />
                     <Label Name="labelWarningEvaluationTime" Foreground="Red" FontWeight="Bold" Visibility="Hidden">Evaluation is taking a long time. Click Reset to abort.</Label>
-                </StackPanel>
+                </WrapPanel>
             </Grid>
         </TabItem>
         <TabItem Header="Manage Regular Expressions">

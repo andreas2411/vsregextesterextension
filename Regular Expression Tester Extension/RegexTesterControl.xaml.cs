@@ -1,28 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using EnvDTE;
+using Microsoft.VisualStudio.Shell;
+using RegexTester;
+using RegexTester.Parsing.CSharp;
+using RegexTester.Parsing.VB;
 using RegexTester.UserControls;
 using Forms = System.Windows.Forms;
-using RegexTester;
-using System.Threading;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
-using System.Web.UI.Design;
-using EnvDTE;
-using RegexTester.Parsing.VB;
-using RegexTester.Parsing.CSharp;
-using Microsoft.VisualStudio.Shell;
-using RegexTester.Parsing;
 
 namespace AndreasAndersen.Regular_Expression_Tester_Extension
 {
@@ -48,7 +39,7 @@ namespace AndreasAndersen.Regular_Expression_Tester_Extension
 
             regularExpressionRichTextBox = new SyntaxHighlightRichTextBox();
             regularExpressionRichTextBox.BorderStyle = Forms.BorderStyle.None;
-            regularExpressionRichTextBox.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            regularExpressionRichTextBox.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.syntaxHighlighterHost.Child = regularExpressionRichTextBox;
 
             richTextBoxMatches = new Forms.RichTextBox();
@@ -56,7 +47,6 @@ namespace AndreasAndersen.Regular_Expression_Tester_Extension
             Color richTextBoxBackgroundColor = (textBoxReplaceResult.Background as SolidColorBrush).Color;
             richTextBoxMatches.BackColor = System.Drawing.Color.FromArgb(richTextBoxBackgroundColor.R, richTextBoxBackgroundColor.G, richTextBoxBackgroundColor.B);
             richTextBoxMatches.BorderStyle = Forms.BorderStyle.None;
-            richTextBoxMatches.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxMatchesHost.Child = richTextBoxMatches;
 
             CheckBox[] checkBoxes = new[] { checkBoxCompiled, checkBoxCultureInvariant, checkBoxECMAScript, checkBoxExplicitCapture,
@@ -710,12 +700,17 @@ namespace AndreasAndersen.Regular_Expression_Tester_Extension
             {
                 colorStack.Push(richTextBox.SelectionColor);
                 richTextBox.SelectionColor = System.Drawing.Color.Red;
+                richTextBox.AppendText("(");
+                richTextBox.SelectionColor = System.Drawing.Color.Blue;
+                richTextBox.AppendText("<" + node.GroupName + ">");
+                richTextBox.SelectionColor = System.Drawing.Color.Red;
             }
-            richTextBox.AppendText(beforeChildren ? "(<" + node.GroupName + ">" : ")");
-            if (!beforeChildren)
+            else
             {
+                richTextBox.AppendText(")");
                 richTextBox.SelectionColor = colorStack.Pop();
             }
+
             richTextBox.SelectionFont = currentFont;
         }
 
